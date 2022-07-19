@@ -1,80 +1,99 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="/styles/payslip.css">
-</head>
-
-<body>
-
-  <div class="h-full ml-14 md:ml-64">
-    <div class="pt-56">
-      <div
-      class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md"
-    >
-      <div class="mt-2 text-center mb-10">
-        <h1
-          class="text-2xl font-bold text-gray-700 hover:text-gray-600"
-          >Employee Payslip</h1
-        >
-        <h3 class="text-sm font-light text-gray-600">
-          Serhant Construction
-        </h3>
-      </div>
-
-      <div class="flex justify-between">
-        <div>
-
-
-
-      <div class="flex items-center">
-        <span class="text-sm font-light text-gray-600">Employee ID</span>
-        <a class="px-3 py-1 text-sm font-bold text-gray-400"><%=payslip.emp_id%></a>
-      </div>
-
-      <div class="flex items-center">
-        <span class="text-sm font-light text-gray-600">Name</span>
-        <a class="px-3 py-1 text-sm font-bold text-gray-400"><%=payslip.f_name + ' ' + payslip.l_name%></a>
-      </div>
-
-          <div class="flex items-center">
-            <span class="text-sm font-light text-gray-600">Department</span>
-            <a class="px-3 py-1 text-sm font-bold text-gray-400"><%=payslip.department_name%></a>
+  <body>
+    <div class="h-full ml-14 md:ml-64">
+      <div class="pt-56">
+        <div class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md">
+          <div class="mt-2 text-center mb-10">
+            <h1 class="text-2xl font-bold text-gray-700 hover:text-gray-600">
+              Employee Payslip
+            </h1>
+            <h3 class="text-sm font-light text-gray-600">
+              Serhant Construction
+            </h3>
           </div>
 
-          <div class="flex items-center">
-            <span class="text-sm font-light text-gray-600">Paycycle Period</span>
-            <a class="px-3 py-1 text-sm font-bold text-gray-400"><%=payslip.date_from + ' - ' + payslip.date_to%></a>
-          </div>
+          <div class="flex justify-between">
+            <div>
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Employee ID</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=payslip.emp_id%></a
+                >
+              </div>
 
-          
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600">Name</span>
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=payslip.f_name + ' ' + payslip.l_name%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600">Department</span>
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=payslip.department_name%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Paycycle Period</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=payslip.date_from + ' - ' + payslip.date_to%></a
+                >
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Basic Salary</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  >$<%=payslip.salary%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Overtime Hours</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=payslip.ovt_hrs%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Total Overtime Amount</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  >$<%=payslip.overtime%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Total Salary</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  >$<%=payslip.total_salary%></a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="flex items-center">
-            <span class="text-sm font-light text-gray-600">Basic Salary</span>
-            <a class="px-3 py-1 text-sm font-bold text-gray-400">$<%=payslip.salary%></a>
-          </div>
-
-          <div class="flex items-center">
-            <span class="text-sm font-light text-gray-600">Overtime Hours</span>
-            <a class="px-3 py-1 text-sm font-bold text-gray-400"><%=payslip.ovt_hrs%></a>
-          </div>
-
-          <div class="flex items-center">
-            <span class="text-sm font-light text-gray-600">Total Overtime Amount</span>
-            <a class="px-3 py-1 text-sm font-bold text-gray-400">$<%=payslip.overtime%></a>
-          </div>
-
-          <div class="flex items-center">
-            <span class="text-sm font-light text-gray-600">Total Salary</span>
-            <a class="px-3 py-1 text-sm font-bold text-gray-400">$<%=payslip.total_salary%></a>
-          </div>
-        </div>
-      </div>    
-
+      </div>
     </div>
-    </div>
-  </div>
-
-</body>
+  </body>
 </html>

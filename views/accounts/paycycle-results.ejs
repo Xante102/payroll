@@ -6,79 +6,171 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/styles/cycle-results.css">
 </head>
 
 <body>
 
-  <div class="payInfo">
-    <div class="values">
-      <div class="val-box">
-        <i class="fa fa-users"></i>
-        <div>
-          <h3><%=aggregate.max_salary%></h3>
-          <span>Max Salary</span>
-        </div>
-      </div>
-      <div class="val-box">
-        <i class="fa fa-users"></i>
-        <div>
-          <h3><%=aggregate.total_workhrs%></h3>
-          <span>Toal hours</span>
-        </div>
-      </div>
-      <div class="val-box">
-        <i class="fa fa-users"></i>
-        <div>
-          <h3><%=aggregate.salary_avg%></h3>
-          <span>Avg Salary</span>
-        </div>
-      </div>
-      <div class="val-box">
-        <i class="fa fa-users"></i>
-        <div>
-          <h3><%=aggregate.total_salary%></h3>
-          <span>Total Salary</span>
-        </div>
-      </div>
-    </div>
+  <div class="h-full ml-14 md:ml-64 px-24 py-16">
 
-    <div class="table-head">
-      <h2>Salary Info</h2>
-    </div>
+    <!-- Statistics Cards -->
+   <div class="mb-10">
+     
+     <dl class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+       
+       <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+         <dt>
+           <div class="absolute bg-blue-600 rounded-md p-3">
+             <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 19V22H13V19H14C16.2091 19 18 17.2091 18 15C18 12.7909 16.2091 11 14 11H13V7H15V9H17V5H13V2H11V5H10C7.79086 5 6 6.79086 6 9C6 11.2091 7.79086 13 10 13H11V17H9V15H7V19H11ZM13 17H14C15.1046 17 16 16.1046 16 15C16 13.8954 15.1046 13 14 13H13V17ZM11 11V7H10C8.89543 7 8 7.89543 8 9C8 10.1046 8.89543 11 10 11H11Z" fill="currentColor" /></svg>            </span>
+           </div>
+           <p class="ml-16 text-sm font-medium text-gray-500 truncate">Max Salary</p>
+         </dt>
+         <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+           <p class="text-2xl font-semibold text-gray-900"><%=aggregate.max_salary%></p>
+          
+           <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+             <div class="text-sm">
+               <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+             </div>
+           </div>
+         </dd>
+       </div>
 
-    <!-- <a href="/salary/form" class="add-btn">Add Salary Info</a> -->
-    <div class="board">
-      <table width="100%">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Department</th>
-            <th>Hours worked</th>
-            <th>Salary</th>
-            <th>OT hours</th>
-            <th>Overtime</th>
-            <th>Final Salary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% payinfo.forEach((pay)=>{ %>
-          <tr>
-            <td class="fname"><%=pay.first_nm%></td>
-            <td class="lname"><%=pay.last_nm%></td>
-            <td class="department"><%=pay.department_nm%></td>
-            <td class="trn"><%=pay.hrs%></td>
-            <td class="trn"><%=pay.salary%></td>
-            <td class="exphrs"><%=pay.overtime_hrs%></td>
-            <td class="exphrs"><%=pay.overtime%></td>
-            <td class="exphrs"><%=pay.final_salary%></td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+       <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+        <dt>
+          <div class="absolute bg-blue-600 rounded-md p-3">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 19V22H13V19H14C16.2091 19 18 17.2091 18 15C18 12.7909 16.2091 11 14 11H13V7H15V9H17V5H13V2H11V5H10C7.79086 5 6 6.79086 6 9C6 11.2091 7.79086 13 10 13H11V17H9V15H7V19H11ZM13 17H14C15.1046 17 16 16.1046 16 15C16 13.8954 15.1046 13 14 13H13V17ZM11 11V7H10C8.89543 7 8 7.89543 8 9C8 10.1046 8.89543 11 10 11H11Z" fill="currentColor" /></svg>            </span>
+          </div>
+          <p class="ml-16 text-sm font-medium text-gray-500 truncate">Average Salary</p>
+        </dt>
+        <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+          <p class="text-2xl font-semibold text-gray-900"><%=aggregate.avg_salary%></p>
+         
+          <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+            <div class="text-sm">
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+            </div>
+          </div>
+        </dd>
+      </div>
+
+      <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+        <dt>
+          <div class="absolute bg-blue-600 rounded-md p-3">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 19V22H13V19H14C16.2091 19 18 17.2091 18 15C18 12.7909 16.2091 11 14 11H13V7H15V9H17V5H13V2H11V5H10C7.79086 5 6 6.79086 6 9C6 11.2091 7.79086 13 10 13H11V17H9V15H7V19H11ZM13 17H14C15.1046 17 16 16.1046 16 15C16 13.8954 15.1046 13 14 13H13V17ZM11 11V7H10C8.89543 7 8 7.89543 8 9C8 10.1046 8.89543 11 10 11H11Z" fill="currentColor" /></svg>            </span>
+          </div>
+          <p class="ml-16 text-sm font-medium text-gray-500 truncate">Total Salary</p>
+        </dt>
+        <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+          <p class="text-2xl font-semibold text-gray-900"><%=aggregate.total_salary%></p>
+         
+          <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+            <div class="text-sm">
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+            </div>
+          </div>
+        </dd>
+      </div>
+
+      <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+        <dt>
+          <div class="absolute bg-blue-600 rounded-md p-3">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 5.07089C16.3923 5.55612 19 8.47353 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12C5 9.96159 5.87128 8.12669 7.26175 6.84738L5.84658 5.43221C4.09461 7.0743 3 9.40932 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C11.662 3 11.3283 3.01863 11 3.05493V9.08551H13V5.07089Z" fill="currentColor" /><path d="M7.70711 8.70708C7.31658 9.0976 7.31658 9.73077 7.70711 10.1213L10.5355 12.9497C10.9261 13.3402 11.5592 13.3402 11.9497 12.9497C12.3403 12.5592 12.3403 11.926 11.9497 11.5355L9.12132 8.70708C8.7308 8.31655 8.09763 8.31655 7.70711 8.70708Z" fill="currentColor" /></svg>            </span>
+          </div>
+          <p class="ml-16 text-sm font-medium text-gray-500 truncate">Total Hours</p>
+        </dt>
+        <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+          <p class="text-2xl font-semibold text-gray-900"><%=aggregate.total_hrs%></p>
+         
+          <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+            <div class="text-sm">
+              <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+            </div>
+          </div>
+        </dd>
+      </div>
+     </dl>
+    
+   </div>
+           <!-- ./Statistics Cards -->
+   
+           <!-- ./Tables -->
+                   <div class="w-full lg:w-5/6">
+                     <div class="bg-white shadow-md rounded my-6">
+                       <table class="min-w-max w-full table-auto">
+                         <thead>
+                             <tr
+                    class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal"
+                  >
+                    <th class="py-3 px-6 text-center">Name</th>
+                    <th class="py-3 px-6 text-center">Department</th>
+                    <th class="py-3 px-6 text-center">Hours worked</th>
+                    <th class="py-3 px-6 text-center">Salary</th>
+                    <th class="py-3 px-6 text-center">Overtime</th>
+                    <th class="py-3 px-6 text-center">Overtime Hours</th>
+                    <th class="py-3 px-6 text-center">Total Salary</th>
+                  </tr>
+                         </thead>
+                         
+                         <tbody class="text-gray-600 text-xs font-light">
+                          <% payinfo.forEach((pay)=>{ %>
+
+                          <tr class="border-b border-gray-200 hover:bg-gray-100">
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex justify-center space-x-3 items-center">
+                                <span
+                                  ><%= pay.f_name + ' ' + pay.l_name
+                                  %></span
+                                >
+                              </div>
+                            </td>
+        
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex items-center justify-center">
+                                <span><%= pay.department_name %></span>
+                              </div>
+                            </td>
+        
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex items-center justify-center">
+                                <span><%= pay.hrs %></span>
+                              </div>
+                            </td>
+        
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex items-center justify-center">
+                                <span><%= pay.salary %></span>
+                              </div>
+                            </td>
+        
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex items-center justify-center">
+                                <span><%= pay.overtime %></span>
+                              </div>
+                            </td>
+        
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex items-center justify-center">
+                                <span><%= pay.ovt_hrs %></span>
+                              </div>
+                            </td>
+        
+                            <td class="py-3 px-6 text-center">
+                              <div class="flex items-center justify-center">
+                                <span><%= pay.total_salary %></span>
+                              </div>
+                            </td>
+        
+                          </tr>
+                           
+                           <% }) %>
+                         </tbody>
+                       </table>
+                     </div>
+                   </div>
+  
+           <!-- ./Tables -->
+     </div>
+
 
 </body>
 

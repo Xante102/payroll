@@ -6,25 +6,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/styles/summary.css">
 
 </head>
 
 <body>
-  <div class="h-full ml-14 md:ml-64">
 
-  <form action="/employee-salary/salary" method="post">
-    <h2>Welcome</h2>
-    <span>Select a Paycycle</span>
-    <select name="cycle_id" id="">
-      <% paycycle.forEach((cycle)=>{ %>
-      <option value="<%=cycle.id%>"><%=cycle.start_time%>-<%=cycle.end_time%></option>
-      <% }) %>
-    </select>
-    <button class="generate" type="submit">Search</button>
-  </form>
   <div class="h-full ml-14 md:ml-64">
+    <h2 class="text-2xl text-center pt-24 font-semibold text-gray-700 capitalize">
+      Welcome Employee        </h2>
 
+    <div class="pt-48">
+      <section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
+      
+        <form method="POST" action="/employees/employee-salary">
+          <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+            <div>
+              <label class="text-gray-700">Select Paycycle</label>
+              <select
+                name="emp_id"
+                id=""
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              >
+              <% paycycle.forEach((cycle)=>{ %>
+                <option value="<%=cycle.id%>">
+                  <%=cycle.date_from + ' - ' + cycle.date_to%>                </option>
+                <% })%>
+              </select>
+            </div>
+
+        
+          <div class="flex justify-end mt-6">
+            <button
+              type="submit"
+              class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+            >
+Search            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
 </body>
 
 </html>

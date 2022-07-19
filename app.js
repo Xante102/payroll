@@ -8,7 +8,6 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const app = express();
 
-
 app.use(layout);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
