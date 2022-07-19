@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/employee-form.css" />
+</head>
+
+<body>
+  <form action="/employees/update" method="post">
+    <input type="hidden" name="id" value="<%=edit.id%>">
+    <input type="hidden" name="login_id" value="<%=edit.login_id%>">
+    <h2>Add an Employee</h2>
+    <div class="contact">
+      <div class="name">
+        <span>First Name</span>
+        <input type="text" name="first_nm" value="<%=edit.first_nm%>" />
+        <span>Email</span>
+        <input type="email" name="email" value="<%=edit.email%>" />
+        <span>NIS</span>
+        <input type="text" name="nis" value="<%=edit.nis%>" />
+
+      </div>
+      <div class="login">
+        <span>Last Name</span>
+        <input type="text" name="last_nm" value="<%=edit.last_nm%>" />
+        <span>Password</span>
+        <input type="password" name="password" value="<%=edit.password%>" />
+        <span>Trn</span>
+        <input type="text" name="trn" value="<%=edit.trn%>" />
+      </div>
+    </div>
+    <span>Choose Department</span>
+    <select name="department_id" id="">
+      <option selected value="<%=edit.depart_id%>"><%=edit.department_nm%></option>
+      <% departments.forEach((department)=>{ %>
+      <option value="<%=department.id%>"><%=department.department_nm%></option>
+      <% }) %>
+    </select>
+
+    <span>Choose Role</span>
+    <select name="role_id" id="">
+      <option selected value="<%=edit.role_id%>"><%=edit.roles%></option>
+      <% roles.forEach((role)=>{ %>
+      <option value="<%=role.id%>"><%=role.roles%></option>
+      <% }) %>
+    </select>
+
+    <button class="emp-add" type="submit">Add Employee</button>
+  </form>
+</body>
+
+</html>

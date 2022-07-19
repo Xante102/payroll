@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/salary.css">
+</head>
+
+<body>
+  <div class="navigation">
+    <div class="nl">
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="profile">
+      <i class="fas fa-bell"></i>
+      <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-18.jpg" alt="" />
+    </div>
+  </div>
+
+
+  <div class="table-head">
+    <h2>Department Salary</h2>
+  </div>
+
+  <div class="board">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Department</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Hours worked</th>
+          <th>Salary</th>
+          <th>Overtime</th>
+          <th>Final Salary</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(salary.length > 0) { %>
+        <% salary.forEach((pay)=>{ %>
+        <tr>
+          <td class="fname"><%=pay.first_nm%></td>
+          <td class="lname"><%=pay.last_nm%></td>
+          <td class="department"><%=pay.department_nm%></td>
+          <td class="department"><%=pay.start_time%></td>
+          <td class="trn"><%=pay.salary%></td>
+          <td class="exphrs"><%=pay.overtime%></td>
+          <td class="exphrs"><%=pay.final_salary%></td>
+          <td class="edit">
+            <a href="/salary/edit/<%=pay.salary_id%>"><i class="fas fa-edit"></i></a>
+          </td>
+        </tr>
+        <% }) %>
+        <% } else {%>
+        <tr>
+          <td colspan="9">NO Salary</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>

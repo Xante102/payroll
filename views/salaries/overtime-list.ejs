@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/salary.css" />
+</head>
+
+<body>
+  <div class="h-full ml-14 md:ml-64">
+    <div class="overflow-x-auto">
+      <div
+        class="min-w-screen min-h-screen flex items-center justify-center font-sans overflow-hidden"
+      >
+        <div class="w-full lg:w-5/6">
+          <div class="bg-white shadow-md rounded my-6">
+            <table class="min-w-max w-full table-auto">
+              <thead>
+                <tr
+                  class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"
+                >
+                  <th class="py-3 px-6 text-center">First Name</th>
+                  <th class="py-3 px-6 text-center">Last Name</th>
+                  <th class="py-3 px-6 text-center">Hours Worked</th>
+                  <th class="py-3 px-6 text-center">Overtime Hours</th>
+                  <th class="py-3 px-6 text-center">Overtime Salary</th>
+                  <th class="py-3 px-6 text-center">Total Salary</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-600 text-sm font-light">
+                <% if(overtime.length) { for (let i = 0; i <
+                  overtime.length; i++) { %>
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-6 text-center">
+                    <div class="flex justify-center space-x-3 items-center">
+                      <span><%= overtime[i].f_name %></span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-6 text-center">
+                    <div class="flex items-center justify-center">
+                      <span><%= overtime[i].l_name %></span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-6 text-center">
+                    <div class="flex items-center justify-center">
+                      <span><%= overtime[i].hrs %></span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-6 text-center">
+                    <div class="flex items-center justify-center">
+                      <span><%= overtime[i].ovt_hrs %></span>
+                    </div>
+                  </td>  
+                  <td class="py-3 px-6 text-center">
+                    <div class="flex items-center justify-center">
+                      <span><%= overtime[i].overtime %></span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-6 text-center">
+                    <div class="flex items-center justify-center">
+                      <span><%= overtime[i].total_salary %></span>
+                    </div>
+                  </td>
+
+                </tr>
+
+                <% } } else { %>
+                <tr>
+                  <td colspan="7" class="px-4 py-3 font-semibold text-center">
+                    NO OVERTIME DATA
+                  </td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

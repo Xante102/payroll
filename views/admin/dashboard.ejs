@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="h-full ml-14 md:ml-64 px-24 py-16">
+
+ <!-- Statistics Cards -->
+<div class="mb-10">
+  
+  <dl class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+      <dt>
+       <div class="absolute bg-blue-600 rounded-md p-3">
+          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <p class="ml-16 text-sm font-medium text-gray-500 truncate">Employees</p>
+      </dt>
+      <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900"><%=aggregate[0][0].emp_count%></p>
+  
+        <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+          </div>
+        </div>
+      </dd>
+    </div>
+
+    <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+      <dt>
+        <div class="absolute bg-blue-600 rounded-md p-3">
+          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <p class="ml-16 text-sm font-medium text-gray-500 truncate">Users</p>
+      </dt>
+      <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900"><%=aggregate[2][0].log_count%></p>
+        
+        <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+          </div>
+        </div>
+      </dd>
+    </div>
+
+    <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+      <dt>
+        <div class="absolute bg-blue-600 rounded-md p-3">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4V16H22V2H8V4H20Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8V22H16V8H2ZM14 10H4V20H14V10Z" fill="currentColor" /><path d="M17 7H5V5H19V19H17V7Z" fill="currentColor" /></svg>
+        </div>
+        <p class="ml-16 text-sm font-medium text-gray-500 truncate">Departments</p>
+      </dt>
+      <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900"><%=aggregate[1][0].dep_count%></p>
+       
+        <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+          </div>
+        </div>
+      </dd>
+    </div>
+
+    
+    <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+      <dt>
+        <div class="absolute bg-blue-600 rounded-md p-3">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 19V22H13V19H14C16.2091 19 18 17.2091 18 15C18 12.7909 16.2091 11 14 11H13V7H15V9H17V5H13V2H11V5H10C7.79086 5 6 6.79086 6 9C6 11.2091 7.79086 13 10 13H11V17H9V15H7V19H11ZM13 17H14C15.1046 17 16 16.1046 16 15C16 13.8954 15.1046 13 14 13H13V17ZM11 11V7H10C8.89543 7 8 7.89543 8 9C8 10.1046 8.89543 11 10 11H11Z" fill="currentColor" /></svg>            </span>
+        </div>
+        <p class="ml-16 text-sm font-medium text-gray-500 truncate">Total Salary</p>
+      </dt>
+      <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900"><%=aggregate[3][0].salary_sum%></p>
+       
+        <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-blue-600 hover:text-blue-800"> View all</a>
+          </div>
+        </div>
+      </dd>
+    </div>
+  </dl>
+</div>
+        <!-- ./Statistics Cards -->
+
+        <!-- ./Tables -->
+        <div class="flex space-x-10">
+                <div class="w-full lg:w-5/6">
+                  <div class="bg-white shadow-md rounded my-6">
+                    <table class="min-w-max w-full table-auto">
+                      <thead>
+                        <tr
+                          class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"
+                        >
+                          <th class="py-3 px-6 text-center">First Name</th>
+                          <th class="py-3 px-6 text-center">Last Name</th>
+                          <th class="py-3 px-6 text-center">Department</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-gray-600 text-sm font-light">
+                        <% if(employees.length) { for (let i = 0; i < employees.length; i++)
+                        { %>
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+                      
+                          <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                              <span><%= employees[i].f_name %></span>
+                            </div>
+                          </td>
+                          <td class="py-3 px-6 text-center">
+                            <div class="flex justify-center space-x-3 items-center">
+                              <span><%= employees[i].l_name %></span>
+                            </div>
+                          </td>
+                          <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                              <span><%= employees[i].department_name %></span>
+                            </div>
+                          </td>
+                        </tr>
+  
+                        <% } } else { %>
+                        <tr>
+                          <td
+                            colspan="7"
+                            class="px-4 py-3 font-semibold text-center"
+                          >
+                            NO EMPLOYEES DATA
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+  
+  
+                <div class="w-full lg:w-5/6">
+                  <div class="bg-white shadow-md rounded my-6">
+                    <table class="min-w-max w-full table-auto">
+                      <thead>
+                        <tr
+                          class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"
+                        >
+                          <th class="py-3 px-6 text-center">Id</th>
+                          <th class="py-3 px-6 text-center">Department</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-gray-600 text-sm font-light">
+                        <% if(departments.length) { for (let i = 0; i < departments.length; i++)
+                        { %>
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+                      
+                          <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                              <span class="font-medium"><%= departments[i].id %></span>
+                            </div>
+                          </td>
+                          <td class="py-3 px-6 text-center">
+                            <div class="flex justify-center space-x-3 items-center">
+                              <span><%= departments[i].department_name %></span>
+                            </div>
+                          </td>
+                        </tr>
+  
+                        <% } } else { %>
+                        <tr>
+                          <td
+                            colspan="7"
+                            class="px-4 py-3 font-semibold text-center"
+                          >
+                            NO DEPARTMENTS DATA
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+        </div>
+        <!-- ./Tables -->
+  </div>
+</body>
+</html>

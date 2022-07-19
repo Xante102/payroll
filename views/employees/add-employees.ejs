@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/employee-form.css" />
+</head>
+
+<body>
+  <div class="h-full ml-14 md:ml-64">
+    <div class="pt-48">
+      <section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
+        <h2 class="text-lg font-semibold text-gray-700 capitalize">
+          Add Employee
+        </h2>
+
+        <form method="POST" action="/employees/add">
+          <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+            <div>
+              <label class="text-gray-700">Select Employee</label>
+              <select
+                name="emp_id"
+                id=""
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              >
+                <% employees.forEach((employee)=>{ %>
+                <option value="<%=employee.id%>">
+                  <%=employee.f_name%> <%=employee.l_name%>
+                </option>
+                <% })%>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-gray-700">Hours Worked</label>
+              <input
+                name="hrs"
+                type="number"
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              />
+            </div>
+
+            <div>
+              <label class="text-gray-700">Departments</label>
+              <select
+                name="dpt_id"
+                id=""
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              >
+                <% departments.forEach((department)=>{ %>
+                <option value="<%=department.id%>">
+                  <%=department.department_name%>
+                </option>
+                <% })%>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-gray-700">Paycycle</label>
+              <select
+                name="paycycle_id"
+                id=""
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              >
+                <% paycycle.forEach((paycycle)=>{ %>
+                <option value="<%=paycycle.id%>">
+                  <%=paycycle.date_from%>
+                </option>
+                <% })%>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-gray-700">Overtime Hours</label>
+              <input
+                name="ovt_hrs"
+                type="number"
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              />
+            </div>
+
+            <div>
+              <label class="text-gray-700" for="id"></label>
+              <input
+                name="id"
+                type="hidden"
+                class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"
+              />
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <button
+              type="submit"
+              class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <form action="/employees/add" method="post">
+    <h2>Add an Employee</h2>
+    <div class="contact">
+      <div class="name">
+        <span>First Name</span>
+        <input type="text" name="first_nm" />
+        <span>Email</span>
+        <input type="email" name="email" />
+        <span>NIS</span>
+        <input type="text" name="nis" />
+
+      </div>
+      <div class="login">
+        <span>Last Name</span>
+        <input type="text" name="last_nm" />
+        <span>Password</span>
+        <input type="password" name="password" />
+        <span>Trn</span>
+        <input type="text" name="trn" />
+      </div>
+    </div>
+
+    <span>Choose Department</span>
+    <select name="department_id" id="">
+      <% departments.forEach((department)=>{ %>
+      <option value="<%=department.id%>"><%=department.department_nm%></option>
+      <% }) %>
+    </select>
+
+    <span>Choose Role</span>
+    <select name="role_id" id="">
+      <% roles.forEach((role)=>{ %>
+      <option value="<%=role.id%>"><%=role.roles%></option>
+      <% }) %>
+    </select>
+
+    <button class="emp-add" type="submit">Add Employee</button>
+  </form>
+</body>
+
+</html>

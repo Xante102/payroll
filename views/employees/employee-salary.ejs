@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/summary.css">
+
+</head>
+
+<body>
+  <div class="h-full ml-14 md:ml-64">
+
+  <form action="/employee-salary/salary" method="post">
+    <h2>Welcome</h2>
+    <span>Select a Paycycle</span>
+    <select name="cycle_id" id="">
+      <% paycycle.forEach((cycle)=>{ %>
+      <option value="<%=cycle.id%>"><%=cycle.start_time%>-<%=cycle.end_time%></option>
+      <% }) %>
+    </select>
+    <button class="generate" type="submit">Search</button>
+  </form>
+  <div class="h-full ml-14 md:ml-64">
+
+</body>
+
+</html>

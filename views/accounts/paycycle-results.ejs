@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/cycle-results.css">
+</head>
+
+<body>
+
+  <div class="payInfo">
+    <div class="values">
+      <div class="val-box">
+        <i class="fa fa-users"></i>
+        <div>
+          <h3><%=aggregate.max_salary%></h3>
+          <span>Max Salary</span>
+        </div>
+      </div>
+      <div class="val-box">
+        <i class="fa fa-users"></i>
+        <div>
+          <h3><%=aggregate.total_workhrs%></h3>
+          <span>Toal hours</span>
+        </div>
+      </div>
+      <div class="val-box">
+        <i class="fa fa-users"></i>
+        <div>
+          <h3><%=aggregate.salary_avg%></h3>
+          <span>Avg Salary</span>
+        </div>
+      </div>
+      <div class="val-box">
+        <i class="fa fa-users"></i>
+        <div>
+          <h3><%=aggregate.total_salary%></h3>
+          <span>Total Salary</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-head">
+      <h2>Salary Info</h2>
+    </div>
+
+    <!-- <a href="/salary/form" class="add-btn">Add Salary Info</a> -->
+    <div class="board">
+      <table width="100%">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Hours worked</th>
+            <th>Salary</th>
+            <th>OT hours</th>
+            <th>Overtime</th>
+            <th>Final Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% payinfo.forEach((pay)=>{ %>
+          <tr>
+            <td class="fname"><%=pay.first_nm%></td>
+            <td class="lname"><%=pay.last_nm%></td>
+            <td class="department"><%=pay.department_nm%></td>
+            <td class="trn"><%=pay.hrs%></td>
+            <td class="trn"><%=pay.salary%></td>
+            <td class="exphrs"><%=pay.overtime_hrs%></td>
+            <td class="exphrs"><%=pay.overtime%></td>
+            <td class="exphrs"><%=pay.final_salary%></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

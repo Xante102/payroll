@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/profile.css" />
+  </head>
+
+  <body>
+    <div class="h-full ml-14 md:ml-64">
+      <div class="pt-32">
+        <div class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md">
+          <% salary.forEach((pay)=>{ %>
+
+          <div class="mt-2 text-center mb-10">
+            <h1 class="text-2xl font-bold text-gray-700 hover:text-gray-600">
+              Salary Preview
+            </h1>
+            <h3 class="text-sm font-light text-gray-600">
+              Serhant Construction
+            </h3>
+          </div>
+
+          <div class="flex justify-between">
+            <div>
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600">Name</span>
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=pay.f_name + ' ' + pay.l_name%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600">Department</span>
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=pay.department_name%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Basic Salary</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  >$<%=pay.salary%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Paycycle Period</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=pay.date_from + ' - ' + pay.date_to%></a
+                >
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Hours Worked</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=pay.emp_id%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Overtime Hours</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  ><%=pay.ovt_hrs%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Total Overtime Amount</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  >$<%=pay.overtime%></a
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="text-sm font-light text-gray-600"
+                  >Total Salary</span
+                >
+                <a class="px-3 py-1 text-sm font-bold text-gray-400"
+                  >$<%=pay.total_salary%></a
+                >
+              </div>
+            </div>
+          </div>
+          <a
+            href="/preview/edit/<%=pay.salary_id%>"
+            class="flex justify-end mt-2 mr-2 transform text-gray-700 hover:text-blue-500 duration-200 ease-in cursor-pointer"
+          >
+            <svg class="w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+              />
+            </svg>
+          </a>
+
+          <%})%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
